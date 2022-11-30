@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Texturify: Generating Textures on 3D Shape Surfaces">
-    <meta name="keywords" content="Texurify, GAN, 3D textures, textures, stylegan">
+    <meta name="description" content="Learning Neural Parametric Head Models">
+    <meta name="keywords" content="NPHM, Neural Fields, Virtual Avatars, Signed Distance Field, Deformation Field, 3D Scanning, Dataset">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Texturify: Generating Textures on 3D Shape Surfaces</title>
+    <title>Learning Neural Parametric Head Models</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -58,38 +58,38 @@
             <div class="container is-max-desktop">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">Texturify: Generating Textures on 3D Shape Surfaces</h1>
+                        <h1 class="title is-1 publication-title">Learning Neural Parametric Head Models</h1>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
-                                <a href="https://niessnerlab.org/members/yawar_siddiqui/profile.html">Yawar Siddiqui</a><sup>1</sup>,</span>
+                                <a href="https://niessnerlab.org/members/simon_giebenhain/profile.html">Simon Giebenhain</a><sup>1</sup>,</span>
                             <span class="author-block">
-                                <a href="https://justusthies.github.io/">Justus Thies</a><sup>2</sup>,</span>
+                                <a href="https://niessnerlab.org/members/tobias_kirschstein/profile.html">Tobias Kirschstein</a><sup>1</sup>,</span>
                             <span class="author-block">
-                                <a href="https://fangchangma.github.io/">Fangchang Ma</a><sup>3</sup>,
+                                <a href="todo">Markos Georgopoulos</a><sup>2</sup>,
                             </span>
                             <span class="author-block">
-                                <a href="http://shanqi.github.io/">Qi Shan</a><sup>3</sup>,
+                                <a href="todo">Martin Rünz</a><sup>2</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="">Lourdes Agapito</a><sup>3</sup>,
                             </span>
                             <span class="author-block">
                                 <a href="https://niessnerlab.org/members/matthias_niessner/profile.html">Matthias
                                     Nießner</a><sup>1</sup>,
                             </span>
-                            <span class="author-block">
-                                <a href="https://www.3dunderstanding.org/team.html">Angela Dai</a><sup>1</sup>,
-                            </span>
                         </div>
 
                         <div class="is-size-5 publication-authors">
                             <span class="author-block"><sup>1</sup>Technical University of Munich,</span>
-                            <span class="author-block"><sup>2</sup>Max Planck Institute for Intelligent Systems,</span>
-                            <span class="author-block"><sup>3</sup>Apple</span>
+                            <span class="author-block"><sup>2</sup>Synthesia</span>
+                            <span class="author-block"><sup>3</sup>University College London</span>
                         </div>
 
                         <div class="column has-text-centered">
                             <div class="publication-links">
                                 <!-- PDF Link. -->
                                 <span class="link-block">
-                                    <a href="static/Texturify.pdf"
+                                    <a href="static/NPHM.pdf"
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fas fa-file-pdf"></i>
@@ -98,7 +98,7 @@
                                     </a>
                                 </span>
                                 <span class="link-block">
-                                    <a class="external-link button is-normal is-rounded is-dark" href="https://arxiv.org/abs/2204.02411">
+                                    <a class="external-link button is-normal is-rounded is-dark" href="TODO">
                                         <span class="icon">
                                             <i class="ai ai-arxiv"></i>
                                         </span>
@@ -107,7 +107,7 @@
                                 </span>
                                 <!-- Video Link. -->
                                 <span class="link-block">
-                                    <a href="https://youtu.be/M5OU_fiD3Jk"
+                                    <a href="TODO"
                                         class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <svg class="svg-inline--fa fa-youtube fa-w-18" aria-hidden="true"
@@ -148,7 +148,7 @@
             <div class="hero-body">
                 <img src="./static/teaser/teaser.png" height="150%" />
                 <h2 class=" subtitle has-text-centered" style="padding-top: 10px">
-                    <span class="dnerf">Texturify</span> learns to generate geometry-aware textures for untextured collections of 3D objects. Our method trains from only a collection of images and a collection of untextured shapes, which are both often available, without requiring any explicit 3D color supervision or shape-image correspondence. Textures are created directly on the surface of a given 3D shape, enabling generation of high-quality, compelling textured 3D shapes.
+                    <span class="dnerf">NPHM</span> TODO
                 </h2>
             </div>
         </div>
@@ -198,20 +198,12 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                        Texture cues on 3D objects are key to compelling visual representations, with the possibility to create high visual fidelity with inherent spatial consistency across different views.
-                        Since the availability of textured 3D shapes remains very limited, learning a 3D-supervised data-driven method that predicts a texture based on the 3D input is very challenging.
+                        TODO
                         </p>
                         <p>
-                        We thus propose Texurify, a GAN-based method that leverages a 3D shape dataset of an object class and learns to reproduce the distribution of appearances observed in real images by generating high-quality textures.
+                        TODO
                         </p>
-                        <p>
-                        In particular, our method does not require any 3D color supervision or correspondence between shape geometry and images to learn the texturing of 3D objects.
-                        Texurify operates directly on the surface of the 3D objects by introducing face convolutional operators on a hierarchical 4-RoSy parameterization to generate plausible object-specific textures.
-                        Employing differentiable rendering and adversarial losses that critique individual views and consistency across views, we effectively learn the high-quality surface texturing distribution from real-world images.
-                        </p>
-                        <p>
-                        Experiments on car and chair shape collections show that our approach outperforms state of the art by an average of 22% in FID score.
-                        </p>
+
                     </div>
                 </div>
             </div>
@@ -220,7 +212,7 @@
                 <div class="column is-four-fifths">
                     <h2 class="title is-3">Video</h2>
                     <div class="publication-video">
-                    <iframe src="https://www.youtube.com/embed/M5OU_fiD3Jk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="todo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -235,7 +227,7 @@
             <h3 class="title is-4">Latent Interpolation</h3>
             <div class="content has-text-justified">
                 <p>
-                    The texture latent space learned by our method produces smoothly-varying valid textures when traversing across the latent space for a fixed shape.
+                    TODO
                 </p>
             </div>
             <div class="columns is-vcentered" style="margin-top: 10px">
@@ -252,10 +244,10 @@
                         </div>
                         <input class="slider is-fullwidth is-large is-info"
                                id="interpolation-slider-chair"
-                               step="1" min="0" max="100" value="0" type="range">
+                               step="1" min="0" max="20" value="0" type="range">
                     </div>
                     <div class="column is-3 has-text-centered">
-                        <img src="./static/latent_interpolation/chair/025.jpg"
+                        <img src="./static/latent_interpolation/chair/020.jpg"
                              class="interpolation-image"
                              alt="Interpolation end reference image."/>
                         <p class="is-bold">End Frame</p>
@@ -278,49 +270,58 @@
                                step="1" min="0" max="100" value="0" type="range">
                     </div>
                     <div class="column is-3 has-text-centered">
-                        <img src="./static/latent_interpolation/car/025.jpg"
+                        <img src="./static/latent_interpolation/car/017.jpg"
                              class="interpolation-image"
                              alt="Interpolation end reference image."/>
                         <p class="is-bold">End Frame</p>
                     </div>
                 </div>
             </div>
+
+
+
+
             <!-- Novel datasets. -->
             <div class="columns is-centered" style="margin-top: 25px">
                 <div class="column is-full-width">
-                    <h2 class="title is-4">Style Consistency</h2>
+                    <h2 class="title is-4">Expression Transfer</h2>
                     <div class="content has-text-justified">
                         <p>
-                            The learned latent space is consistent in style across different shapes, i.e. the same code represents a similar style across shapes, and can be used, for example, in style transfer applications.
+                            TODO
                         </p>
                     </div>
                     <div class="columns is-centered">
                         <div class="column is-2">
                             <div class="buttons is-centered" style="height: 100%">
-                              <button class="button" id="style_button_0" style="background-color: #0a0a0a; color: #d5d5d5">Style 1</button>
-                              <button class="button" id="style_button_1" style="background-color: #d3bb90; color: #0a0a0a">Style 2</button>
-                              <button class="button" id="style_button_2" style="background-color: #c6d576; color: #0a0a0a">Style 3</button>
+                              <button class="button" id="style_button_0" style="background-color: #0a0a0a; color: #d5d5d5">Neutral</button>
+                              <button class="button" id="style_button_1" style="background-color: #d3bb90; color: #0a0a0a">Expression 1</button>
+                              <button class="button" id="style_button_2" style="background-color: #c6d576; color: #0a0a0a">Expression 2</button>
+                                                              <button class="button" id="style_button_3" style="background-color: #c6d576; color: #0a0a0a">Expression 3</button>
                             </div>
                         </div>
-                        <div class="column" style="background-color: #f5f5f5; margin-left: -5px;">
+                        <div class="column" style="background-color: #f3cc66ff; margin-left: -5px;text-align: center;">
                             <div class="item item-steve render_wrapper_small">
                                 <div id="mesh_style_0" class="render_div"></div>
                             </div>
+                            Source/Actor
                         </div>
-                        <div class="column" style="background-color: #f5f5f5; margin-left: 5px;">
+                        <div class="column" style="background-color: #f5f5f5; margin-left: 5px;text-align: center;">
                             <div class="item item-steve render_wrapper_small">
                                 <div id="mesh_style_1" class="render_div"></div>
                             </div>
+                            Target 1
                         </div>
-                        <div class="column" style="background-color: #f5f5f5; margin-left: 5px;">
+                        <div class="column" style="background-color: #f5f5f5; margin-left: 5px; text-align: center;">
                             <div class="item item-steve render_wrapper_small">
                                 <div id="mesh_style_2" class="render_div"></div>
                             </div>
+                            Target 2
                         </div>
-                        <div class="column" style="background-color: #f5f5f5; margin-left: 5px;">
+                        <div class="column" style="background-color: #f5f5f5; margin-left: 5px; text-align: center;">
                             <div class="item item-steve render_wrapper_small">
                                 <div id="mesh_style_3" class="render_div"></div>
                             </div>
+                            Target 3
                         </div>
                     </div>
 
@@ -411,11 +412,11 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
         <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
             <pre>
-<code>@misc{siddiqui2022texturify,
-    title={Texturify: Generating Textures on 3D Shape Surfaces},
-    author={Yawar Siddiqui and Justus Thies and Fangchang Ma and Qi Shan and Matthias Nießner and Angela Dai},
-    year={2022},
-    eprint={2204.02411},
+<code>@misc{giebenhain2022nphm,
+    title={Learning Neural Parametric Head Models},
+    author={Simon Giebenhain and Tobias Kirschstein and Markos Georgopoulos and  Martin Rünz and Lourdes Agapito and Matthias Nießner},
+    year={2022}
+    eprint={todo?},
     archivePrefix={arXiv},
     primaryClass={cs.CV}
 }</code></pre>
@@ -540,13 +541,15 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
             let height = container.parentElement.clientHeight;
             console.log(width, height)
             let camera = new THREE.PerspectiveCamera( 35, width / height, 0.1, 50 );
-            let camera_init_position = new THREE.Vector3( -1.5, 0.35, 1.2 );
-            if (div_name.includes("chair")){
-                camera_init_position = camera_init_position.multiplyScalar(1.5)
-            }
-            else if (div_name.includes("style")) {
-                camera_init_position = camera_init_position.multiplyScalar(1.25)
-            }
+            //let camera_init_position = new THREE.Vector3( -1.5, 0.35, 1.2 );
+            let camera_init_position = new THREE.Vector3( 0., 0., 1.2 );
+            camera_init_position = camera_init_position.multiplyScalar(1.5)
+            //if (div_name.includes("style")) {
+            //    camera_init_position = camera_init_position.multiplyScalar(1.25)
+            //}
+            //else if (div_name.includes("style")) {
+            //    camera_init_position = camera_init_position.multiplyScalar(1.25)
+            //}
             camera.position.set(camera_init_position.x, camera_init_position.y, camera_init_position.z);
             return camera;
         }
@@ -594,12 +597,17 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
 
                     geometry.computeVertexNormals();
                     let material_color = new THREE.MeshBasicMaterial( { color: 0xffffff, vertexColors: THREE.VertexColors} );
-                    let material_geo = new THREE.MeshStandardMaterial( { color: 0x444444, flatShading: true } )
-
+                    //let material_geo = new THREE.MeshStandardMaterial( { color: 0x444444, flatShading: true, roughness: 0.5, metalness: 0.3 } )
+                    //let material_geo = new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false} )
+                    const material_geo = new THREE.MeshPhongMaterial( {
+                                                color: 0xCCE6FF,
+                                                specular: 0x222222,
+                                                shininess: 25,} );
 
                     const mesh_color = new THREE.Mesh( geometry, material_color );
                     const mesh_geo = new THREE.Mesh( geometry, material_geo );
-
+                    mesh_geo.castShadow = true;
+				    mesh_geo.receiveShadow = true;
                     div_to_scene[div_id]["color"].add( mesh_color );
                     div_to_scene[div_id]["geo"].add( mesh_geo );
 
@@ -612,9 +620,20 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
 
                 // lights
 
-                div_to_scene[div_id]["geo"].add( new THREE.HemisphereLight( 0x333333, 0x222222 ) );
-                addShadowedLight(div_to_scene[div_id]["geo"], 1, 1, 1, 0xffffff, 1.35 );
-                addShadowedLight(div_to_scene[div_id]["geo"],  0.5, 1, - 1, 0xffffff, 1 );
+                //div_to_scene[div_id]["geo"].add( new THREE.HemisphereLight( 0x333333, 0x222222) );
+                //div_to_scene[div_id]["geo"].add(new THREE.AmbientLight( 0x333333, 1) );
+                //const directionalLight = new THREE.DirectionalLight( 0xffffff, 1. );
+                //directionalLight.position.set( 1, 1, 1 );
+                //div_to_scene[div_id]["geo"].add( directionalLight );
+                //addShadowedLight(div_to_scene[div_id]["geo"], -5, -5, 5, 0xffffff, 1. );
+                //addShadowedLight(div_to_scene[div_id]["geo"], 1, 1, 1, 0xffffff, 1.35 );
+                //addShadowedLight(div_to_scene[div_id]["geo"], -1, 1, -1, 0xffffff, 1.35 );
+                //addShadowedLight(div_to_scene[div_id]["geo"], 0, -2, 1, 0xffffff, 0.5 );
+                //addShadowedLight(div_to_scene[div_id]["geo"],  0, -1, 2, 0xffffff, 0.5 );
+
+                add_lights(div_to_scene[div_id]["geo"])
+
+
 
                 // renderer
 
@@ -623,7 +642,7 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
                 renderer.setSize( width, height);
                 renderer.outputEncoding = THREE.sRGBEncoding;
 
-                renderer.shadowMap.enabled = true;
+                //renderer.shadowMap.enabled = true;
 
                 container.appendChild( renderer.domElement );
 
@@ -655,6 +674,26 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
             return controls;
         }
 
+        function add_lights(scene) {
+                scene.add( new THREE.HemisphereLight( 0x443333, 0x111122 ,0.05) );
+				const spotLight = new THREE.SpotLight( 0xffffff, 0.6 );
+				spotLight.position.set( 0.5, 0.5, 1 );
+				const spotLight2 = new THREE.SpotLight( 0xffffff, 0.3 );
+				spotLight2.position.set( -0.75, 0.2, 0 );
+				const spotLight3 = new THREE.SpotLight( 0xffffff, 0.3 );
+				spotLight3.position.set( -0.5, 0, 1 );
+				const spotLight4 = new THREE.SpotLight( 0xffffff, 0.3 );
+				spotLight4.position.set( 0.5, 0.5, -1 );
+				const spotLight5 = new THREE.SpotLight( 0xffffff, 0.15 );
+				spotLight5.position.set( 0, -1.5, 0 );
+				////spotLight.position.multiplyScalar( 700 );
+				scene.add( spotLight );
+				scene.add( spotLight2 );
+				//div_to_scene[div_id]["geo"].add( spotLight3 );
+				scene.add( spotLight4 );
+				scene.add( spotLight5 );
+        }
+
         function create_style_render_div(camera, div_id, mesh_path) {
             let container;
             let renderer, controls;
@@ -684,14 +723,18 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
                 ["0", "1", "2"].forEach(id => {
                     loader.load( mesh_path + id + ".ply", function ( geometry ) {
                         geometry.computeVertexNormals();
-                        let material = new THREE.MeshBasicMaterial( { color: 0xffffff, vertexColors: THREE.VertexColors} );
+                        let material = new THREE.MeshStandardMaterial( { color: 0xffffff} );
                         const mesh_color = new THREE.Mesh( geometry, material );
                         div_to_render_scene[div_id][id].add( mesh_color );
-                        if (id === "0") {
-                            let material_geo = new THREE.MeshStandardMaterial( { color: 0x444444, flatShading: true } )
-                            const mesh_geo = new THREE.Mesh( geometry, material_geo );
-                            div_to_render_scene[div_id]["geo"].add( mesh_geo );
-                        }
+                        //if (id === "0") {
+                        //let material_geo = new THREE.MeshStandardMaterial( { color: 0x444444, flatShading: true } )
+                        //const mesh_geo = new THREE.Mesh( geometry, material_geo );
+                        //div_to_render_scene[div_id]["geo"].add( mesh_geo );
+                        //}
+                        //div_to_render_scene[div_id][id].add( new THREE.HemisphereLight( 0x333333, 0x222222 ) );
+                        //addShadowedLight(div_to_render_scene[div_id][id], 1, 1, 1, 0xffffff, 1.35 );
+                        //addShadowedLight(div_to_render_scene[div_id][id],  0.5, 1, - 1, 0xffffff, 1 );
+                        add_lights(div_to_render_scene[div_id][id]);
                     }, (xhr) => {
                         console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
                     }, (error) => {
@@ -700,9 +743,7 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
                     );
                 })
 
-                div_to_render_scene[div_id]["geo"].add( new THREE.HemisphereLight( 0x333333, 0x222222 ) );
-                addShadowedLight(div_to_render_scene[div_id]["geo"], 1, 1, 1, 0xffffff, 1.35 );
-                addShadowedLight(div_to_render_scene[div_id]["geo"],  0.5, 1, - 1, 0xffffff, 1 );
+
 
                 // renderer
 
@@ -736,7 +777,7 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
             }
 
             function render() {
-                let scene = render_colors ? div_to_render_scene[div_id][style_id]: div_to_render_scene[div_id]["geo"]
+                let scene = render_colors ? div_to_render_scene[div_id][style_id]: div_to_render_scene[div_id]["geo"][style_id]
                 renderer.render( scene, camera );
                 controls.update();
             }
@@ -814,18 +855,22 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
             let slider = document.getElementsByClassName("slider")[0]
             slider.removeAttribute("tabIndex")
             // slider.addEventListener("mouseout", reset_orbit_controls);
-            setup_render_divs("mesh_chair_0", './models/chair_01328.ply')
-            setup_render_divs("mesh_chair_1", './models/chair_00009.ply')
-            setup_render_divs("mesh_chair_2", './models/chair_00889.ply')
-            setup_render_divs("mesh_chair_3", './models/chair_01829.ply')
-            setup_render_divs("mesh_car_0", './models/car_00265.ply')
-            setup_render_divs("mesh_car_1", './models/car_00742.ply')
-            setup_render_divs("mesh_car_2", './models/car_00848.ply')
-            setup_render_divs("mesh_car_3", './models/car_00944.ply')
-            setup_style_render_divs("mesh_style_0", './models/chair_style_0')
-            setup_style_render_divs("mesh_style_1", './models/chair_style_1')
-            setup_style_render_divs("mesh_style_2", './models/chair_style_2')
-            setup_style_render_divs("mesh_style_3", './models/chair_style_3')
+            setup_render_divs("mesh_chair_0", './models/mesh_0015.ply')
+            setup_render_divs("mesh_chair_1", './models/mesh_0049.ply')
+            setup_render_divs("mesh_chair_2", './models/mesh_0063.ply')
+            setup_render_divs("mesh_chair_3", './models/mesh_0079.ply')
+            setup_render_divs("mesh_car_0", './models/mesh_0111.ply')
+            setup_render_divs("mesh_car_1", './models/mesh_0112.ply')
+            setup_render_divs("mesh_car_2", './models/mesh_0141.ply')
+            setup_render_divs("mesh_car_3", './models/mesh_0238.ply')
+            //setup_style_render_divs("mesh_style_0", './models/chair_style_0')
+            //setup_style_render_divs("mesh_style_1", './models/chair_style_1')
+            //setup_style_render_divs("mesh_style_2", './models/chair_style_2')
+            //setup_style_render_divs("mesh_style_3", './models/chair_style_3')
+            setup_style_render_divs("mesh_style_0", './models/mesh_id95_')
+            setup_style_render_divs("mesh_style_1", './models/mesh_id98_')
+            setup_style_render_divs("mesh_style_2", './models/mesh_id97_')
+            setup_style_render_divs("mesh_style_3", './models/mesh_id95_')
         };
 
     </script>

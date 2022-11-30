@@ -2,12 +2,14 @@ window.HELP_IMPROVE_VIDEOJS = false;
 window.HELP_IMPROVE_VIDEOJS = false;
 
 let INTERP_BASE = "./static/latent_interpolation/";
-let NUM_INTERP_FRAMES = 26;
+let NUM_INTERP_FRAMES = 21;
+let NUM_INTERP_FRAMES_expr = 18;
+
 
 let interp_images_chair = [];
 let interp_images_car = [];
 function preloadInterpolationImages() {
-    for (let i = 0; i < NUM_INTERP_FRAMES; i++) {
+    for (let i = 0; i < NUM_INTERP_FRAMES_expr; i++) {
         let path = INTERP_BASE + 'car/' + String(i).padStart(3, '0') + '.jpg';
         interp_images_car[i] = new Image();
         interp_images_car[i].src = path;
