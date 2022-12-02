@@ -54,7 +54,7 @@
       MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
     <script type="text/javascript"
-      src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 </head>
 
@@ -305,49 +305,14 @@
                 </div>
             </div>
             -->
-        <div class="container is-max-desktop">
+            <div class="container is-max-desktop">
         <div class="content has-text-justified">
-
-          <p>
-            Here is an interactive viewer for the hyper-space of capture shown in the teaser. Drag the
-            <span style="color: #29e">blue cursor</span> around to change the ambient dimension rendered
-            on the right.
-          </p>
-        </div>
-        <div class="columns is-centered">
-          <div class="column is-half">
-            <div class="hyper-space-wrapper has-text-centered">
-              <div class="hyper-space-axis">
-                <div class="hyper-space-outer">
-                  <div class="hyper-space">
-                    <div class="hyper-space-cursor"></div>
-                  </div>
-                </div>
-              </div>
-              Ambient Dimension Coordinates
-              <br/>
-              <small>(Background shows log density of coordinate)</small>
-            </div>
-          </div>
-          <div class="column is-half has-text-centered">
-            <div class="hyper-grid-wrapper">
-              <div class="hyper-grid-rgb">
-                <img src="./static/figures/hyper_grid.jpg"/>
-              </div>
-            </div>
-            The hyper-space template rendered from a fixed viewpoint.
-          </div>
-        </div>
-      </div>
-
-        <div class="container is-max-desktop">
-        <div class="content has-text-justified">
-
-          <p>
-            Here is an interactive viewer for the hyper-space of capture shown in the teaser. Drag the
-            <span style="color: #29e">blue cursor</span> around to change the ambient dimension rendered
-            on the right.
-          </p>
+            <h2 class="title is-4">Latent Shape Interpolation</h2>
+              <p>
+                Here is an interactive viewer allowing to interpolate between for identities. Drag the
+                <span style="color: #29e">blue cursor</span> around to change latent identity description $\mathbf{z}_{\text{id}}$
+                  and observe the reulting change of geometry on the right.
+              </p>
         </div>
         <div class="columns is-centered">
           <div class="column is-half">
@@ -359,9 +324,9 @@
                   </div>
                 </div>
               </div>
-              Ambient Dimension Coordinates
+              Latent Shape Coordinates
               <br/>
-              <small>(Background shows log density of coordinate)</small>
+              <small>(Quadrilateral linear interpolation between 4 cornering identites.)</small>
             </div>
           </div>
           <div class="column is-half has-text-centered">
@@ -370,10 +335,47 @@
                 <img src="./static/figures/hyper_grid_shape.jpg"/>
               </div>
             </div>
-            The hyper-space template rendered from a fixed viewpoint.
+            Resulting geometry in canonical expression.
           </div>
         </div>
       </div>
+
+
+            <div class="container is-max-desktop">
+        <div class="content has-text-justified">
+            <br>
+            <h2 class="title is-4">Latent Expression Interpolation</h2>
+              <p>
+                Here is an interactive viewer allowing for interpolations between four different expressions. Drag the
+                <span style="color: #29e">blue cursor</span> around to change $\mathbf{z}_{\text{ex}}$, which deforms a fixed identity on the right.
+              </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <div class="hyper-space-wrapper has-text-centered">
+              <div class="hyper-space-axis">
+                <div class="hyper-space-outer">
+                  <div class="hyper-space">
+                    <div class="hyper-space-cursor"></div>
+                  </div>
+                </div>
+              </div>
+              Latent Expression Coordinates
+              <br/>
+              <small>(Quadrilateral linear interpolation between 4 cornering expressions.)</small>
+            </div>
+          </div>
+          <div class="column is-half has-text-centered">
+            <div class="hyper-grid-wrapper">
+              <div class="hyper-grid-rgb">
+                <img src="./static/figures/hyper_grid.jpg"/>
+              </div>
+            </div>
+            Deformed Neutral Mesh
+          </div>
+        </div>
+      </div>
+
 
 
 
