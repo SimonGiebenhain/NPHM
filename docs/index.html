@@ -48,7 +48,14 @@
     <script defer src="./static/js/fontawesome.all.min.js"></script>
     <script src="./static/js/bulma-carousel.min.js"></script>
     <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
     <script src="./static/js/index.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+      src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 </head>
 
 <body>
@@ -61,7 +68,7 @@
                         <h1 class="title is-1 publication-title">Learning Neural Parametric Head Models</h1>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
-                                <a href="https://niessnerlab.org/members/simon_giebenhain/profile.html">Simon Giebenhain</a><sup>1</sup>,</span>
+                                <a href="https://simongiebenhain.github.io">Simon Giebenhain</a><sup>1</sup>,</span>
                             <span class="author-block">
                                 <a href="https://niessnerlab.org/members/tobias_kirschstein/profile.html">Tobias Kirschstein</a><sup>1</sup>,</span>
                             <span class="author-block">
@@ -75,7 +82,7 @@
                             </span>
                             <span class="author-block">
                                 <a href="https://niessnerlab.org/members/matthias_niessner/profile.html">Matthias
-                                    Nießner</a><sup>1</sup>,
+                                    Nießner</a><sup>1</sup>
                             </span>
                         </div>
 
@@ -134,6 +141,15 @@
                                     </a>
                                 </span>
                                 <!-- Dataset Link. -->
+                                <span class="link-block">
+                                    <a class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-database"></i>
+                                        </span>
+                                        <span>Dataset (coming soon)</span>
+                                    </a>
+                                </span>
+                                <!-- Dataset Link. -->
                                 <span class="link-block"></span>
                             </div>
                         </div>
@@ -146,9 +162,14 @@
     <section class="hero teaser">
         <div class="container is-max-desktop">
             <div class="hero-body">
-                <img src="./static/teaser/teaser.png" height="150%" />
+                <img src="./static/teaser/teaser.jpg" height="150%" />
                 <h2 class=" subtitle has-text-centered" style="padding-top: 10px">
-                    <span class="dnerf">NPHM</span> TODO
+                    <p align="left">
+                    We propose to learn a neural parametric head model based on neural fields: first, we capture a large dataset of over 2000 high-fidelity head scans with varying shapes and expressions (left).
+                    We then non-rigidly register these scans to generate our training data.
+                    As a result of training, we obtain a disentangled latent that spans the space of shapes $\mathbf{z}_{id}$ and expressions $\mathbf{z}_{ex}$ (middle).
+                    At inference time, we can leverage the prior of our learned representation by fitting our model to a sparse input point cloud by solving for the latent codes (right).
+                    </p>
                 </h2>
             </div>
         </div>
@@ -184,7 +205,7 @@
 			            <div id="mesh_car_3" class="render_div"></div>
                     </div>
                 </div>
-                <div style="text-align: center;">Press <b>G</b> to toggle between geometry and <span class="dnerf">Texturified</span> meshes. Press <b>R</b> to reset view. </div>
+                <div style="text-align: center;">Press <b>R</b> to reset views. </div>
             </div>
         </div>
     </section>
@@ -197,13 +218,16 @@
                 <div class="column is-four-fifths">
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
-                        <p>
-                        TODO
-                        </p>
-                        <p>
-                        TODO
-                        </p>
-
+                        <p margin="0">
+                        We propose a novel 3D morphable model (3DMM) for complete human heads based on hybrid neural fields. <br>
+                        At the core of our model lies a neural parametric representation which disentangles identity and expressions in a disjoint latent space.
+                        To this end, we capture a person's identity in a canonical space as a signed distance field (SDF) and model facial expressions with a neural deformation field.
+                        <br>
+                        In addition, our representation achieves high-fidelity local detail by introducing an ensemble of local fields centered around facial anchor points.
+                        <br>
+                        To facilitate generalization, we train our model on a newly-captured dataset of over 2000 face scans from 120 different identities using a custom high-end 3D scanning set-up. Our dataset significantly exceeds comparable existing datasets, both with respect to quality and completeness of geometry, averaging around 3.5M faces per scan.
+                        <br>
+                        Finally, we demonstrate that our approach outperforms state-of-the-art methods by a significant margin in terms of fitting error and reconstruction quality.
                     </div>
                 </div>
             </div>
@@ -221,13 +245,16 @@
     </section>
 
 
+
+
     <section class="section">
         <div class="container is-max-desktop">
 
+            <!--
             <h3 class="title is-4">Latent Interpolation</h3>
             <div class="content has-text-justified">
                 <p>
-                    TODO
+                    Our learned, disentangled representation allows for smooth latent interpolation of identity (left) and expression (right), respecitvely.
                 </p>
             </div>
             <div class="columns is-vcentered" style="margin-top: 10px">
@@ -267,7 +294,7 @@
                         </div>
                         <input class="slider is-fullwidth is-large is-info"
                                id="interpolation-slider-car"
-                               step="1" min="0" max="100" value="0" type="range">
+                               step="1" min="0" max="17" value="0" type="range">
                     </div>
                     <div class="column is-3 has-text-centered">
                         <img src="./static/latent_interpolation/car/017.jpg"
@@ -277,26 +304,103 @@
                     </div>
                 </div>
             </div>
+            -->
+        <div class="container is-max-desktop">
+        <div class="content has-text-justified">
+
+          <p>
+            Here is an interactive viewer for the hyper-space of capture shown in the teaser. Drag the
+            <span style="color: #29e">blue cursor</span> around to change the ambient dimension rendered
+            on the right.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <div class="hyper-space-wrapper has-text-centered">
+              <div class="hyper-space-axis">
+                <div class="hyper-space-outer">
+                  <div class="hyper-space">
+                    <div class="hyper-space-cursor"></div>
+                  </div>
+                </div>
+              </div>
+              Ambient Dimension Coordinates
+              <br/>
+              <small>(Background shows log density of coordinate)</small>
+            </div>
+          </div>
+          <div class="column is-half has-text-centered">
+            <div class="hyper-grid-wrapper">
+              <div class="hyper-grid-rgb">
+                <img src="./static/figures/hyper_grid.jpg"/>
+              </div>
+            </div>
+            The hyper-space template rendered from a fixed viewpoint.
+          </div>
+        </div>
+      </div>
+
+        <div class="container is-max-desktop">
+        <div class="content has-text-justified">
+
+          <p>
+            Here is an interactive viewer for the hyper-space of capture shown in the teaser. Drag the
+            <span style="color: #29e">blue cursor</span> around to change the ambient dimension rendered
+            on the right.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <div class="hyper-space-wrapper-shape has-text-centered">
+              <div class="hyper-space-axis-shape">
+                <div class="hyper-space-shape-outer">
+                    <div class="hyper-space-shape">
+                        <div class="hyper-space-cursor-shape"></div>
+                  </div>
+                </div>
+              </div>
+              Ambient Dimension Coordinates
+              <br/>
+              <small>(Background shows log density of coordinate)</small>
+            </div>
+          </div>
+          <div class="column is-half has-text-centered">
+            <div class="hyper-grid-wrapper-shape">
+              <div class="hyper-grid-rgb-shape">
+                <img src="./static/figures/hyper_grid_shape.jpg"/>
+              </div>
+            </div>
+            The hyper-space template rendered from a fixed viewpoint.
+          </div>
+        </div>
+      </div>
 
 
 
 
-            <!-- Novel datasets. -->
+            <!-- Expression Transfer. -->
             <div class="columns is-centered" style="margin-top: 25px">
                 <div class="column is-full-width">
                     <h2 class="title is-4">Expression Transfer</h2>
                     <div class="content has-text-justified">
                         <p>
-                            TODO
+                            Futhermore, the disentangled structure of NPHM allows us to transfer expressions from one subject to others.
+                            <br>
+                            Here we show one subject acting as actor and apply its expressions $\mathbf{z}_{ex}$ to 3 other test set subjects.
+                            <br>
+                            The neutral expression shows each subject in their repsecive neutral expression.
                         </p>
                     </div>
                     <div class="columns is-centered">
                         <div class="column is-2">
-                            <div class="buttons is-centered" style="height: 100%">
-                              <button class="button" id="style_button_0" style="background-color: #0a0a0a; color: #d5d5d5">Neutral</button>
-                              <button class="button" id="style_button_1" style="background-color: #d3bb90; color: #0a0a0a">Expression 1</button>
-                              <button class="button" id="style_button_2" style="background-color: #c6d576; color: #0a0a0a">Expression 2</button>
-                                                              <button class="button" id="style_button_3" style="background-color: #c6d576; color: #0a0a0a">Expression 3</button>
+                            <div class="buttons is-centered" style="height: 10%">
+                              <button class="button" id="style_button_0" style="background-color: #0a0a0a; color: #d5d5d5; height:25px; width: 100%">Neutral</button>
+                              <button class="button" id="style_button_1" style="background-color: #c27ba0ff; color: #0a0a0a; height:25px; width: 100%">Expression 1</button>
+                              <button class="button" id="style_button_2" style="background-color: #c27ba0ff; color: #0a0a0a; height:25px; width: 100%">Expression 2</button>
+                              <button class="button" id="style_button_3" style="background-color: #c27ba0ff; color: #0a0a0a; height:25px; width: 100%">Expression 3</button>
+                              <button class="button" id="style_button_4" style="background-color: #c27ba0ff; color: #0a0a0a; height:25px; width: 100%">Expression 4</button>
+                              <button class="button" id="style_button_5" style="background-color: #c27ba0ff; color: #0a0a0a; height:25px; width: 100%">Expression 5</button>
+                              <button class="button" id="style_button_6" style="background-color: #c27ba0ff; color: #0a0a0a; height:25px; width: 100%">Expression 6</button>
                             </div>
                         </div>
                         <div class="column" style="background-color: #f3cc66ff; margin-left: -5px;text-align: center;">
@@ -326,7 +430,7 @@
                     </div>
 
                     <div class="content" style="text-align: center">
-                        [ Press <b>G</b> to toggle between geometry and <span class="dnerf">Texturified</span> meshes. Press <b>R</b> to reset view. ]
+                        [Select expressions on the left. Press <b>R</b> to reset view. ]
                     </div>
                 </div>
             </div>
@@ -336,12 +440,31 @@
             <div class="columns is-centered" style="margin-top: 15px">
                 <div class="column is-full-width">
                     <h2 class="title is-4">Method Overview</h2>
-                    <img src="./static/teaser/overview.png"/>
+                    <img src="./static/teaser/overview.jpg"/>
                     <div class="content has-text-justified" style="padding-top: 15px">
-                        <p>Surface features from an input 3D mesh are encoded through a face convolution-based encoder and decoded through a StyleGAN2-inspired decoder to generate textures directly on the surface of the mesh.</p>
-                        <p>To ensure that generated textures are realistic, the textured mesh is differentiably rendered from different view points and is critiqued by two discriminators.</p>
-                        <p>An image discriminator D<sub>I</sub> operates on full image views from the real or rendered views, while a patch-consistency discriminator D<sub>P</sub> encourages consistency between views by operating on patches coming from a single real view or patches from different views of rendered images.</p>
+                        <p><b>1.</b> We capture a dataset of 124 identities in 20 different expressions. The neutral expression has an open mouth to avoid topological issues.</p>
+                        <p><b>2.</b> We directly train our identity network on the raw neutral scans.</p>
+                        <p><b>3.</b> Building on 2D facial landmark detectors, we non-rigidly register a common template against all scans.</p>
+                        <p><b>4.</b> We estimate the ground truth deformation fields between expression using the registrations and directly supervise our expression network.</p>
+                        <p><b>5.</b> Our identity network represents shapes implicitly using an ensemble of local MLPs, each described by an individual latent vector.
+                            We incorporate a symmetry prior by mirroring the local coordinate systems of symmetric MLPs and share their parameters.</p>
                     </div>
+
+                </div>
+            </div>
+
+            <div class="columns is-centered" style="margin-top: 15px">
+                <div class="column is-full-width">
+                    <h2 class="title is-4">Dataset</h2>
+                        <p align="left">
+                        The animation below displays 4 identities from our dataset, performing all 20 expressions.
+                        In total our dataset contains 124 identities and more than 2200 scans in total.
+                        <br>
+                        Our scans capture a high level of detail and are very complete, including good capture of hair.
+                        On average, each mesh has 3.5M faces. (Note that we added 3 additional expressions for our latest 50 scanning subjects.)
+                        </p>
+                    <img src="./static/dataset/animated.gif" height="250%" />
+
 
                 </div>
             </div>
@@ -377,28 +500,23 @@
 
                     <div class="content has-text-justified">
                         <p>
-                            For more work on similar tasks, please check out
+                            For more work on similar tasks, please check out the following papers.
                         </p>
                         <p>
-                            <a href="https://www.bmvc2021-virtualconference.com/assets/papers/0271.pdf">Learning Texture Generators for 3D Shape
-Collections from Internet Photo Sets</a> learns a texture generator for 3D objects from 2D image collections using a common UV parameterization.
-                        </p>
-
-                        <p>
-                            <a href="https://avg.is.mpg.de/publications/oechsle2019iccv">Texture Fields: Learning Texture Representations in Function Space</a>
-                            learns a texture generator parameterized as an implicit field.
+                            <a href="https://pablopalafox.github.io/npms/">NPMs</a> learns a parametric model for human bodies,
+                            and <a href="https://pablopalafox.github.io/spams/">SPAMs</a> extends the idea to a part based representation (torso, legs, arms, head).
                         </p>
 
                         <p>
-                            <a href="https://arxiv.org/abs/2006.14660">SPSG: Self-Supervised Photometric Scene Generation from RGB-D Scans</a> tackles scene completion both in terms of geometry and texture using a 3D grid parameterization.
+                            <a href="https://vcai.mpi-inf.mpg.de/projects/i3DMM/"> i3DMMs</a> and <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Zheng_ImFace_A_Nonlinear_3D_Morphable_Face_Model_With_Implicit_Neural_CVPR_2022_paper.pdf"> ImFace</a> both learn a neural-field-based 3DMM
+                            without requiring non-rigid registration.
                         </p>
 
                         <p>
-                            <a href="https://threedle.github.io/text2mesh/">Text2Mesh: Text-Driven Neural Stylization for Meshes</a> optimizes color and geometric details over a variety of source meshes, driven by a target text prompt.
-                        </p>
+                            <a href="https://pengsongyou.github.io/conv_onet"> Convolutionl Occupancy Networks</a> explore regular (2D planes and 3D grids) local conditioning for implicit shape representation.
+                            <a href="https://github.com/SimonGiebenhain/AIR-Nets"> AIR-Net</a> explores attention operators for locally conditioned implicit representations, which allows for less regular structure.
+                            <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Genova_Local_Deep_Implicit_Functions_for_3D_Shape_CVPR_2020_paper.pdf"> Local Deep Implicit Funcions</a> also a use a flexible, point-based conditioning with Gaussian influence.
 
-                        <p>
-                            <a href="https://arxiv.org/abs/1812.00020">TextureNet: Consistent Local Parametrizations for Learning from High-Resolution Signals on Meshes</a>, our motivation for using 4-RoSy parameterization, introduces a neural network architecture designed to extract features from high-resolution signals associated with 3D surface meshes, and show its application on point cloud segmentation.
                         </p>
                     </div>
                 </div>
@@ -427,10 +545,10 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
     <footer class="footer">
         <div class="container">
             <div class="content has-text-centered">
-                <a class="icon-link" href="static/Texturify.pdf">
+                <a class="icon-link" href="static/nphm.pdf">
                     <i class="fas fa-file-pdf"></i>
                 </a>
-                <a class="icon-link" href="https://github.com/nihalsid" class="external-link" disabled>
+                <a class="icon-link" href="https://github.com/SimonGiebenhain" class="external-link" disabled>
                     <i class="fab fa-github"></i>
                 </a>
             </div>
@@ -438,11 +556,13 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
                 <div class="column is-8">
                     <div class="content">
                         <p style="text-align:center">
-                            Source code mainly borrowed from <a href="https://keunhong.com/">Keunhong Park</a>'s <a
-                                href="https://nerfies.github.io/">Nerfies website</a>.
+                            Source code mainly borrowed from <a href="https://keunhong.com/">Keunhong Park</a>'s
+                            <a href="https://nerfies.github.io/">Nerfies website</a> and
+                            <a href="https://niessnerlab.org/members/yawar_siddiqui/profile.html">Yawar Siddiqui's</a> adoption for
+                            <a href="https://nihalsid.github.io/texturify//">Texturify</a>.
                         </p>
                         <p style="text-align:center">
-                            Please contact <a href="https://niessnerlab.org/members/yawar_siddiqui/profile.html">Yawar Siddiqui</a> for feedback and questions.
+                            Please contact <a href="https://niessnerlab.org/members/simon_giebenhain/profile.html">Simon Giebenhain</a> for feedback and questions.
                         </p>
 
                     </div>
@@ -450,6 +570,10 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
             </div>
         </div>
     </footer>
+
+
+
+
 
     <!-- Import maps polyfill -->
     <!-- Remove this when import maps will be widely supported -->
@@ -472,35 +596,27 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
         let div_to_scene = {
             "mesh_chair_0": {
                 "geo": null,
-                "color": null,
             },
             "mesh_chair_1": {
                 "geo": null,
-                "color": null,
             },
             "mesh_chair_2": {
                 "geo": null,
-                "color": null,
             },
             "mesh_chair_3": {
                 "geo": null,
-                "color": null,
             },
             "mesh_car_0": {
                 "geo": null,
-                "color": null,
             },
             "mesh_car_1": {
                 "geo": null,
-                "color": null,
             },
             "mesh_car_2": {
                 "geo": null,
-                "color": null,
             },
             "mesh_car_3": {
                 "geo": null,
-                "color": null,
             }
         }
         let div_to_render_scene = {
@@ -508,25 +624,38 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
                 "0": null,
                 "1": null,
                 "2": null,
-                "geo": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
             },
             "mesh_style_1": {
                 "0": null,
                 "1": null,
                 "2": null,
-                "geo": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
             },
             "mesh_style_2": {
                 "0": null,
                 "1": null,
                 "2": null,
-                "geo": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+
             },
             "mesh_style_3": {
                 "0": null,
                 "1": null,
                 "2": null,
-                "geo": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
             },
         }
         let mouse_button_down = false;
@@ -569,6 +698,10 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
             document.getElementById("style_button_0").addEventListener("click", set_style_0)
             document.getElementById("style_button_1").addEventListener("click", set_style_1)
             document.getElementById("style_button_2").addEventListener("click", set_style_2)
+            document.getElementById("style_button_3").addEventListener("click", set_style_3)
+            document.getElementById("style_button_4").addEventListener("click", set_style_4)
+            document.getElementById("style_button_5").addEventListener("click", set_style_5)
+            document.getElementById("style_button_6").addEventListener("click", set_style_6)
         }
 
         function create_render_div(camera, div_id, mesh_path) {
@@ -585,10 +718,10 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
                 let height = container.parentElement.clientHeight;
 
 
-                div_to_scene[div_id]["color"] = new THREE.Scene();
                 div_to_scene[div_id]["geo"] = new THREE.Scene();
-                div_to_scene[div_id]["color"].background = new THREE.Color( 0xffffff );
                 div_to_scene[div_id]["geo"].background = new THREE.Color( 0xffffff );
+                //var axesHelper = new THREE.AxesHelper( 5 );
+                //div_to_scene[div_id]["geo"].add( axesHelper );
 
                 // PLY file
 
@@ -596,7 +729,6 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
                 loader.load( mesh_path, function ( geometry ) {
 
                     geometry.computeVertexNormals();
-                    let material_color = new THREE.MeshBasicMaterial( { color: 0xffffff, vertexColors: THREE.VertexColors} );
                     //let material_geo = new THREE.MeshStandardMaterial( { color: 0x444444, flatShading: true, roughness: 0.5, metalness: 0.3 } )
                     //let material_geo = new THREE.MeshPhongMaterial( { color: 0x999999, depthWrite: false} )
                     const material_geo = new THREE.MeshPhongMaterial( {
@@ -604,11 +736,9 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
                                                 specular: 0x222222,
                                                 shininess: 25,} );
 
-                    const mesh_color = new THREE.Mesh( geometry, material_color );
                     const mesh_geo = new THREE.Mesh( geometry, material_geo );
-                    mesh_geo.castShadow = true;
-				    mesh_geo.receiveShadow = true;
-                    div_to_scene[div_id]["color"].add( mesh_color );
+                    //mesh_geo.castShadow = true;
+				    //mesh_geo.receiveShadow = true;
                     div_to_scene[div_id]["geo"].add( mesh_geo );
 
                 }, (xhr) => {
@@ -635,6 +765,7 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
 
 
 
+
                 // renderer
 
                 renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -648,10 +779,24 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
 
                 controls = new OrbitControls(camera, renderer.domElement)
                 controls.enableDamping = false
+                controls.autoRotate = true
+
 
                 // resize
 
                 window.addEventListener( 'resize', onWindowResize );
+                //controls.addEventListener('change', onChange)
+                controls.addEventListener('start', function(){
+                  //clearTimeout(autorotateTimeout);
+                  controls.autoRotate = false;
+                });
+
+                // restart autorotate after the last interaction & an idle time has passed
+                //this.controls.addEventListener('end', function(){
+                //  autorotateTimeout = setTimeout(function(){
+                //    controls.autoRotate = true;
+                //  }, 1000);
+                //});
 
         }
             function onWindowResize() {
@@ -663,11 +808,12 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
             }
             function animate() {
                 requestAnimationFrame( animate );
+                controls.update();
                 render();
             }
 
             function render() {
-                renderer.render( div_to_scene[div_id][render_colors ? "color" : "geo"], camera );
+                renderer.render( div_to_scene[div_id]["geo"], camera );
                 controls.update();
             }
 
@@ -675,6 +821,28 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
         }
 
         function add_lights(scene) {
+                scene.add( new THREE.HemisphereLight( 0x443333, 0x111122 ,0.05) );
+				const spotLight = new THREE.SpotLight( 0xffffff, 0.5 );
+				spotLight.position.set( 0.0, 0.5, 1 );
+				const spotLight2 = new THREE.SpotLight( 0xffffff, 0.25 );
+			    spotLight2.position.set( -2, 0.3, -0.2 );
+				const spotLight3 = new THREE.SpotLight( 0xffffff, 0.25 );
+				spotLight3.position.set( 2, -0.3, 0.2 );
+				const spotLight4 = new THREE.SpotLight( 0xffffff, 0.25 );
+				spotLight4.position.set( 0.0, 1, -2 );
+				const spotLight5 = new THREE.SpotLight( 0xffffff, 0.05 );
+				spotLight5.position.set( 0, -2.5, -1 );
+				////spotLight.position.multiplyScalar( 700 );
+				scene.add( spotLight );
+				scene.add( spotLight2 );
+				scene.add( spotLight3 );
+				scene.add( spotLight4 );
+				scene.add( spotLight5 );
+
+
+        }
+
+        function add_lightsBACKUP(scene) {
                 scene.add( new THREE.HemisphereLight( 0x443333, 0x111122 ,0.05) );
 				const spotLight = new THREE.SpotLight( 0xffffff, 0.6 );
 				spotLight.position.set( 0.5, 0.5, 1 );
@@ -711,19 +879,29 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
                 div_to_render_scene[div_id]["0"] = new THREE.Scene();
                 div_to_render_scene[div_id]["1"] = new THREE.Scene();
                 div_to_render_scene[div_id]["2"] = new THREE.Scene();
+                div_to_render_scene[div_id]["3"] = new THREE.Scene();
+                div_to_render_scene[div_id]["4"] = new THREE.Scene();
+                div_to_render_scene[div_id]["5"] = new THREE.Scene();
+                div_to_render_scene[div_id]["6"] = new THREE.Scene();
                 div_to_render_scene[div_id]["0"].background = new THREE.Color( 0xffffff );
                 div_to_render_scene[div_id]["1"].background = new THREE.Color( 0xffffff );
                 div_to_render_scene[div_id]["2"].background = new THREE.Color( 0xffffff );
-                div_to_render_scene[div_id]["geo"] = new THREE.Scene();
-                div_to_render_scene[div_id]["geo"].background = new THREE.Color( 0xffffff );
+                div_to_render_scene[div_id]["3"].background = new THREE.Color( 0xffffff );
+                div_to_render_scene[div_id]["4"].background = new THREE.Color( 0xffffff );
+                div_to_render_scene[div_id]["5"].background = new THREE.Color( 0xffffff );
+                div_to_render_scene[div_id]["6"].background = new THREE.Color( 0xffffff );
 
                 // PLY file
 
                 const loader = new PLYLoader();
-                ["0", "1", "2"].forEach(id => {
+                ["0", "1", "2", "3", "4", "5", "6"].forEach(id => {
                     loader.load( mesh_path + id + ".ply", function ( geometry ) {
                         geometry.computeVertexNormals();
-                        let material = new THREE.MeshStandardMaterial( { color: 0xffffff} );
+                        //let material = new THREE.MeshStandardMaterial( { color: 0xffffff} );
+                        const material = new THREE.MeshPhongMaterial( {
+                                                color: 0xCCE6FF,
+                                                specular: 0x222222,
+                                                shininess: 25,} );
                         const mesh_color = new THREE.Mesh( geometry, material );
                         div_to_render_scene[div_id][id].add( mesh_color );
                         //if (id === "0") {
@@ -777,7 +955,7 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
             }
 
             function render() {
-                let scene = render_colors ? div_to_render_scene[div_id][style_id]: div_to_render_scene[div_id]["geo"][style_id]
+                let scene = div_to_render_scene[div_id][style_id]
                 renderer.render( scene, camera );
                 controls.update();
             }
@@ -827,6 +1005,7 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
         function reset_orbit_controls() {
             list_of_orbit_controls.forEach(oc => {
                 oc.reset()
+                oc.autoRotate = false
             })
         }
 
@@ -840,6 +1019,20 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
 
         function set_style_2(){
             style_id = "2"
+        }
+
+        function set_style_3(){
+            style_id = "3"
+        }
+
+        function set_style_4(){
+            style_id = "4"
+        }
+        function set_style_5(){
+            style_id = "5"
+        }
+        function set_style_6(){
+            style_id = "6"
         }
 
         document.body.onmousedown = function(evt) {
@@ -867,7 +1060,7 @@ Collections from Internet Photo Sets</a> learns a texture generator for 3D objec
             //setup_style_render_divs("mesh_style_1", './models/chair_style_1')
             //setup_style_render_divs("mesh_style_2", './models/chair_style_2')
             //setup_style_render_divs("mesh_style_3", './models/chair_style_3')
-            setup_style_render_divs("mesh_style_0", './models/mesh_id95_')
+            setup_style_render_divs("mesh_style_0", './models/mesh_mustafa_')
             setup_style_render_divs("mesh_style_1", './models/mesh_id98_')
             setup_style_render_divs("mesh_style_2", './models/mesh_id97_')
             setup_style_render_divs("mesh_style_3", './models/mesh_id95_')
