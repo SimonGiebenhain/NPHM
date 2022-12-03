@@ -111,15 +111,6 @@ $(window).on("load", function(){
         $(this).attr('src','').removeClass('preload').attr('src', a);
     });
 
-    $('.author-portrait').each(function() {
-      $(this).mouseover(function() {
-          $(this).find('.depth').css('top', '-100%');
-      });
-      $(this).mouseout(function() {
-          $(this).find('.depth').css('top', '0%');
-      });
-    });
-
 
     const position = { x: 0, y: 0 }
     const positionShape = { x: 0, y: 0 }
@@ -209,7 +200,7 @@ function updateHyperGrid(point) {
 }
 
 function updateHyperGridShape(point) {
-  const n = 11 - 1;
+  const n = 21 - 1;
   let top = Math.round(n * point.y.clamp(0, 1)) * 100;
   let left = Math.round(n * point.x.clamp(0, 1)) * 100;
   $('.hyper-grid-rgb-shape > img').css('left', -left + '%');
