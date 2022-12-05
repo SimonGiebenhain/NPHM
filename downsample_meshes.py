@@ -7,5 +7,5 @@ files = [f for f in os.listdir(root) if 'mesh' in f and f.endswith('ply')]
 
 for f in files:
     m = trimesh.load(root + f)
-    m = m.simplify_quadratic_decimation(100000)
+    m = m.simplify_quadratic_decimation(50000)
     m.export(root + f)
