@@ -193,25 +193,16 @@
             <div class="container">
                 <div id="results-carousel" class="carousel results-carousel">
                     <div class="item item-steve render_wrapper">
-			            <div id="mesh_chair_0" class="render_div"></div>
-                    </div>
-                    <div class="item item-steve render_wrapper">
 			            <div id="mesh_chair_1" class="render_div"></div>
-                    </div>
-                    <div class="item item-steve render_wrapper">
-			            <div id="mesh_chair_2" class="render_div"></div>
                     </div>
                     <div class="item item-steve render_wrapper">
 			            <div id="mesh_chair_3" class="render_div"></div>
                     </div>
                     <div class="item item-steve render_wrapper">
-			            <div id="mesh_car_0" class="render_div"></div>
+			            <div id="mesh_chair_2" class="render_div"></div>
                     </div>
                     <div class="item item-steve render_wrapper">
 			            <div id="mesh_car_1" class="render_div"></div>
-                    </div>
-                    <div class="item item-steve render_wrapper">
-			            <div id="mesh_car_2" class="render_div"></div>
                     </div>
                     <div class="item item-steve render_wrapper">
 			            <div id="mesh_car_3" class="render_div"></div>
@@ -410,13 +401,11 @@
                     <div class="columns is-centered">
                         <div class="column is-2">
                             <div class="buttons is-centered" style="height: 10%">
-                              <button class="button" id="style_button_0" style="background-color: #0a0a0a; color: #d5d5d5; height:25px; width: 100%">Neutral</button>
-                              <button class="button" id="style_button_1" style="background-color: #c27ba0ff; color: #0a0a0a; height:25px; width: 100%">Expression 1</button>
-                              <button class="button" id="style_button_2" style="background-color: #c27ba0ff; color: #0a0a0a; height:25px; width: 100%">Expression 2</button>
-                              <button class="button" id="style_button_3" style="background-color: #c27ba0ff; color: #0a0a0a; height:25px; width: 100%">Expression 3</button>
-                              <button class="button" id="style_button_4" style="background-color: #c27ba0ff; color: #0a0a0a; height:25px; width: 100%">Expression 4</button>
-                              <button class="button" id="style_button_5" style="background-color: #c27ba0ff; color: #0a0a0a; height:25px; width: 100%">Expression 5</button>
-                              <button class="button" id="style_button_6" style="background-color: #c27ba0ff; color: #0a0a0a; height:25px; width: 100%">Expression 6</button>
+                              <button class="button" id="style_button_0" style="background-color: #0a0a0a; color: #d5d5d5; height:35px; width: 100%">Neutral</button>
+                              <button class="button" id="style_button_2" style="background-color: #c27ba0ff; color: #0a0a0a; height:35px; width: 100%">Expression 1</button>
+                              <button class="button" id="style_button_3" style="background-color: #c27ba0ff; color: #0a0a0a; height:35px; width: 100%">Expression 2</button>
+                              <button class="button" id="style_button_4" style="background-color: #c27ba0ff; color: #0a0a0a; height:35px; width: 100%">Expression 3</button>
+                              <button class="button" id="style_button_5" style="background-color: #c27ba0ff; color: #0a0a0a; height:35px; width: 100%">Expression 4</button>
                             </div>
                         </div>
                         <div class="column" style="background-color: #f3cc66ff; margin-left: -5px;text-align: center;">
@@ -638,40 +627,32 @@
         let div_to_render_scene = {
             "mesh_style_0": {
                 "0": null,
-                "1": null,
                 "2": null,
                 "3": null,
                 "4": null,
                 "5": null,
-                "6": null,
             },
             "mesh_style_1": {
                 "0": null,
-                "1": null,
                 "2": null,
                 "3": null,
                 "4": null,
                 "5": null,
-                "6": null,
             },
             "mesh_style_2": {
                 "0": null,
-                "1": null,
                 "2": null,
                 "3": null,
                 "4": null,
                 "5": null,
-                "6": null,
 
             },
             "mesh_style_3": {
                 "0": null,
-                "1": null,
                 "2": null,
                 "3": null,
                 "4": null,
                 "5": null,
-                "6": null,
             },
         }
         let mouse_button_down = false;
@@ -712,12 +693,10 @@
             let orbit_control = create_style_render_div(style_camera, div_name, mesh_path, true)
             list_of_orbit_controls.push(orbit_control)
             document.getElementById("style_button_0").addEventListener("click", set_style_0)
-            document.getElementById("style_button_1").addEventListener("click", set_style_1)
             document.getElementById("style_button_2").addEventListener("click", set_style_2)
             document.getElementById("style_button_3").addEventListener("click", set_style_3)
             document.getElementById("style_button_4").addEventListener("click", set_style_4)
             document.getElementById("style_button_5").addEventListener("click", set_style_5)
-            document.getElementById("style_button_6").addEventListener("click", set_style_6)
         }
 
         function create_render_div(camera, div_id, mesh_path) {
@@ -910,7 +889,7 @@
                 // PLY file
 
                 const loader = new PLYLoader();
-                ["0", "1", "2", "3", "4", "5", "6"].forEach(id => {
+                ["0","2", "3", "4", "5"].forEach(id => {
                     loader.load( mesh_path + id + ".ply", function ( geometry ) {
                         geometry.computeVertexNormals();
                         //let material = new THREE.MeshStandardMaterial( { color: 0xffffff} );
@@ -1064,13 +1043,10 @@
             let slider = document.getElementsByClassName("slider")[0]
             slider.removeAttribute("tabIndex")
             // slider.addEventListener("mouseout", reset_orbit_controls);
-            setup_render_divs("mesh_chair_0", './models/mesh_0015.ply')
             setup_render_divs("mesh_chair_1", './models/mesh_0049.ply')
             setup_render_divs("mesh_chair_2", './models/mesh_0063.ply')
             setup_render_divs("mesh_chair_3", './models/mesh_0079.ply')
-            setup_render_divs("mesh_car_0", './models/mesh_0111.ply')
             setup_render_divs("mesh_car_1", './models/mesh_0112.ply')
-            setup_render_divs("mesh_car_2", './models/mesh_0141.ply')
             setup_render_divs("mesh_car_3", './models/mesh_0238.ply')
             //setup_style_render_divs("mesh_style_0", './models/chair_style_0')
             //setup_style_render_divs("mesh_style_1", './models/chair_style_1')
