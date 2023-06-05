@@ -214,10 +214,6 @@ class DataManager():
                       coordinate_system : Literal['raw', 'flame', 'nphm'] = 'nphm') -> np.ndarray:
         fine_mesh = self.get_registration_mesh(subject, expression, coordinate_system)
         landmarks = fine_mesh.vertices[self.lm_inds_upsampled, :]
-        if coordinate_system == 'flame':
-            landmarks = self.transform_nphm_2_flame(landmarks)
-        if coordinate_system == 'raw':
-            landmarks = self.transform_nphm_2_raw(landmarks, subject, expression)
         return landmarks
 
     def get_facial_anchors(self,
@@ -226,10 +222,6 @@ class DataManager():
                       coordinate_system : Literal['raw', 'flame', 'nphm'] = 'nphm') -> np.ndarray:
         fine_mesh = self.get_registration_mesh(subject, expression, coordinate_system)
         anchors = fine_mesh.vertices[self.anchor_indices, :]
-        if coordinate_system == 'flame':
-            anchors = self.transform_nphm_2_flame(anchors)
-        if coordinate_system == 'raw':
-            anchors = self.transform_nphm_2_raw(anchors, subject, expression)
         return np.array(anchors)
 
 
@@ -399,6 +391,7 @@ class DataManager():
                 return f"{dir_name}/full_obs_back.npy"
             else:
                 return f"{dir_name}/full_obs.npy"
+
 
 
 
