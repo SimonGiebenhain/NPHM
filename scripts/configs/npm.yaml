@@ -1,0 +1,28 @@
+decoder:
+  decoder_lat_dim: 512
+  decoder_hidden_dim: 1024
+  decoder_nlayers: 8
+training:
+  batch_size: 32
+  ckpt_interval: 500
+  grad_clip: 0.1
+  grad_clip_lat: 0.1
+  lr: 0.0005
+  lr_lat: 0.001
+  lr_decay_factor: 0.5
+  lr_decay_factor_lat: 0.5
+  lr_decay_interval: 5000
+  lr_decay_interval_lat: 5000
+  npoints_decoder: 750
+  npoints_decoder_non: 250
+  sigma_near: 0.01
+  weight_decay: 0.02
+  lambdas:
+    lat_reg: 0.002
+    surf_sdf: 2.0
+    normals: 0.3
+    space_sdf: 0.01
+    grad: 0.1
+    anchors: 0.0
+    symm_dist: 0.0
+    middle_dist: 0.0

@@ -1,0 +1,35 @@
+ex_decoder:
+  decoder_hidden_dim: 512
+  decoder_lat_dim_expr: 200
+  decoder_lat_dim_id: 32
+  decoder_nlayers: 6
+has_forward: true
+id_decoder:
+  decoder_hidden_dim: 200
+  decoder_lat_dim_glob: 64
+  decoder_lat_dim_loc: 32
+  decoder_nlayers: 4
+  decoder_nloc: 39
+  decoder_nsymm_pairs: 16
+  pos_mlp_dim: 128
+training:
+  batch_size: 32
+  ckpt_interval: 500
+  grad_clip: 0.025
+  grad_clip_lat: 0.025
+  lambdas:
+    anchors: 0.0
+    corresp: 100.0
+    lat_reg: 5.0e-05
+    loss_reg_zero: 5.0e-05
+  lr: 0.0001
+  lr_decay_factor: 0.5
+  lr_decay_factor_lat: 0.5
+  lr_decay_interval: 600
+  lr_decay_interval_lat: 600
+  lr_lat: 0.0005
+  npoints_decoder: 1000
+  shape_ckpt: CHECKPOINT_EPOCH
+  shape_exp_name: SHAPE_EXP_NAME
+  sigma_near: 0.01
+  weight_decay: 0.0005

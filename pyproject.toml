@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "NPHM"
+version = "0.0.1"
+description = "<<<Official Code to the paper 'Learning Neural Parametric Head Models'[CVPR'23] and the associated dataset.>>"
+authors = [
+    { name = "Simon Giebenhain", email = "simon.giebenhain@tum.de" },
+]
+readme = "README.md"
+license = { text = "Apache 2.0" }
+requires-python = ">=3.8.0"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+urls = { Documentation = "<<<ENTER_LINK_TO_DOCUMENTATION>>>" }
+# Main dependencies
+dependencies = [
+    'trimesh',
+    'pymcubes',
+    'pyyaml',
+    'pyrender',
+    'point_cloud_utils',
+    'Pillow',
+    'numpy',
+    'tyro',
+    'scipy',
+    'pyvista',
+    'chardet'
+]
+
+[project.optional-dependencies]
+# Development packages
+dev = [
+]
+
+[project.scripts]
+# E.g., ns-download-data = "scripts.downloads.download_data:entrypoint"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["NPHM*"]  # Keep the '*', otherwise submodules are not found

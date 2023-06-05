@@ -1,0 +1,21 @@
+exp_name_shape:
+  npm_identity_space_pretrained
+checkpoint_shape:
+  7770
+mode:
+  compress
+local_shape:
+  False
+local_expr:
+  False
+exp_name_expr:
+  npm_expression_space_pretrained
+checkpoint_expr:
+  2500
+lambdas_shape:
+  surface: 2.0
+  reg_zero: 0.005
+  reg_global: 0.002
+  symm_dist: 1.0
+  reg_unobserved: 5.0 #5.0
+ 

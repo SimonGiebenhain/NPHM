@@ -1,0 +1,29 @@
+id_decoder:
+  decoder_lat_dim: 512
+  decoder_hidden_dim: 1024
+ex_decoder:
+  decoder_hidden_dim: 512
+  decoder_lat_dim: 200
+  decoder_nblocks: -1
+encoder: null
+has_forward: true
+training:
+  batch_size: 32
+  ckpt_interval: 50
+  grad_clip: 0.025
+  grad_clip_lat: 0.025
+  lambdas:
+    corresp: 100.0
+    lat_reg: 5.0e-05
+    loss_reg_zero: 0.0
+  lr: 0.0001
+  lr_decay_factor: 0.2
+  lr_decay_factor_lat: 0.2
+  lr_decay_interval: 1000
+  lr_decay_interval_lat: 1000
+  lr_lat: 0.0005
+  npoints_decoder: 1000
+  shape_ckpt: CHECKPOINT_EPOCH
+  shape_exp_name: SHAPE_EXP_NAME
+  sigma_near: 0.01
+  weight_decay: 1.0e-05
