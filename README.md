@@ -189,11 +189,14 @@ holding average metrics for the complete head and the facial region respecitivel
 
 While training and inference happens in a canonical coordiante system (to be specific we use the coordiante system of FLAME and scale it by a factor of **4**), we compute metrics in the metric coordiante system in *millimeters (mm)*.
 
+#### Quantitative results on the complete head
+
 |      | ChamferL1(mm) | ChamferL2 (mm) | Normal Consitency | F-Score@1mm | F-Score@5mm |
 |------|-----------|-----------|-------------------|----------|----------|
 | NPM  | 2.657     | 35.896    | 0.883             | 0.478    | 0.873    |
 | NPHM | 2.052     | 13.714    | 0.874             | 0.523    | 0.902    |
 
+#### Quantitative results restricted to the facial area
 
 |      | ChamferL1(mm) | ChamferL2(mm) | Normal Consitency | F-Score@1mm | F-Score@5mm |
 |------|-----------|-----------|-------------------|----------|----------|
