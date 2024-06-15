@@ -16,6 +16,11 @@ This repository contains the implementation of the paper:
 [Matthias Nießner](https://niessnerlab.org/members/matthias_niessner/profile.html)  
 **CVPR 2023**  
 
+### Update:
+**We have released an improved version of NPHM that allows for tracking monocular RGB videos: See [ProjectPage](https://simongiebenhain.github.io/MonoNPHM/) and [Code](https://github.com/SimonGiebenhain/MonoNPHM)**
+
+
+
 If you find our code, dataset or paper useful, please consider citing
 ```bibtex
 @inproceedings{giebenhain2023nphm,
